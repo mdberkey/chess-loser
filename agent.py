@@ -46,9 +46,9 @@ class Game(threading.Thread):
         self.client.bots.post_message(self.game_id, 'Prepare to win.')
         for event in self.stream:
             if event['type'] == 'gameState':
-                self.handle_state_change(event, self.current_state)
+                self.handle_state_change(event)
             elif event['type'] == 'chatLine':
-                self.handle_chat_line(eventt )
+                self.handle_chat_line(event)
 
     def handle_state_change(self, game_state):
         """
