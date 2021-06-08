@@ -48,7 +48,7 @@ class Game(threading.Thread):
             if event['type'] == 'gameState':
                 self.handle_state_change(event, self.current_state)
             elif event['type'] == 'chatLine':
-                self.handle_chat_line(event)
+                self.handle_chat_line(eventt )
 
     def handle_state_change(self, game_state):
         """
@@ -56,7 +56,8 @@ class Game(threading.Thread):
         :param game_state: state of the game
         :return: None
         """
-        self.client.bots.make_move(self.game_id, 'e2e4')
+        print(game_state)
+        #self.client.bots.make_move(self.game_id, 'e2e4')
 
     def handle_chat_line(self, chat_line):
         """
